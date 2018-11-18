@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <header>
+    <div class="topbar">
+      <div class="logo">
+        <img src="/static/logo.png">
+      </div>
+    </div>
+      <div class="nom">
+        <h1>JULMI</h1>
+      </div>
+
+      <style>
+        header {background-color: black;
+          color: white;
+          text-align: center}
+      </style>
+  </header>
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>julmi-project</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+  <style>
+    body {
+      background-color: black;
+    }
+  </style>
+    <div id="app">
+      <authentification></authentification>
+      <panier></panier>
+      <Navigation>
+      </Navigation>
+      <router-view></router-view>
+      <slide></slide>
+      
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+
+  <footer>
+    <style>
+      p {
+        background-color: red;
+        color: white;
+        text-align: center;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+    <p>Copyright © 2018 All rights reserved. Julia GAU & Michella MITSAKIS - ESIEA</p></footer>
+
+</html>
