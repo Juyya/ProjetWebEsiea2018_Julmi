@@ -8,7 +8,7 @@
          <div class="description"><h6>{{data.productDescription}}</h6></div>
          <div class="price"><h6>{{data.productPrice}}</h6></div>
         <div class="addtocart">
-            <button class="btnadd">Add to cart</button>
+            <button class="btnadd" v-on:click="add +=1">Add to cart</button>
         </div>
       </div>
     </div>

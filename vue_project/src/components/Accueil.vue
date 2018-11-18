@@ -2,17 +2,19 @@
           <div id="app">
         <!-- <main>
         <agile>
-        </agile> -->       
+        </agile> -->
     </div>
 
 </template>
 
 <script>
 import Navigation from './Navigation'
+
 export default {
   name: 'Accueil',
   components: {
     Navigation
+
   },
   data () {
     return {
