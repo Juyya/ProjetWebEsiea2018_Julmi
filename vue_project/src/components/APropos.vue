@@ -13,7 +13,7 @@ export default {
   data () {
     return {
       title: 'Julmi',
-      msg: 'dfegrotklrfe^grhktgprlefrohtkn'
+      msg: 'Restaurant japonais au coeur de Paris'
     }
   }
 }

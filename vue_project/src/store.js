@@ -3,12 +3,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-
-
    const state =  {
-      Panier: [
-      ]
-      // userProfile: { id: -1, pseudo: '', password: '', isAdmin: false }
+      Panier: []
     }
 
    const   getters = {
@@ -20,7 +16,7 @@ Vue.use(Vuex)
       addItemPanier (state, item) {
         state.Panier.push(item)
         console.log(state.Panier.length)
-      }
+      }    
     }
 
    /* const actions = {

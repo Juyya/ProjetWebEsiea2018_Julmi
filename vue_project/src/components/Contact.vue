@@ -2,7 +2,7 @@
     <header>
         <div id="app">
         <h1>{{ title }}</h1>
-    <h2>{{ msg }}</h2>
+    <h6>{{ msg }}</h6>
     </div>
     </header>
 </template>
@@ -12,8 +12,8 @@ export default {
   name: 'Contact',
   data () {
     return {
-      title: 'Contactez',
-      msg: 'Téléphone : 0743653457869'
+      title: 'Contact',
+      msg: 'Téléphone : 01.72.66.54.24'
     }
   }
 }

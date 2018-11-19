@@ -1,12 +1,12 @@
 <template>
     <header>
-    <!-- <div class="img-cart">
-        <img src="/static/cart.png">
-    </div> -->
+    <!--<div class="img-cart">
+        <img src="/assets/cart.png">
+    </div>-->
     <div class="cart">
          <h4>Panier</h4>
             <div id="pro">
-                <router-link v-bind:to="'/Checkout'">{{ $store.getters.nbItemPanier }} article(s) - {{ $store.getters.price }}</router-link>
+                <router-link v-bind:to="'/Checkout'">{{ $store.getters.nbItemPanier }} article(s)</router-link>
            <!-- <div class="empty">Votre panier est vide !</div> -->
             </div>
     </div>
@@ -38,5 +38,10 @@ export default {
     .info {
         margin-top : -10px;
         font-size: 14px;
+    }
+
+    #pro {
+        color :inherit;
+        text-decoration: none;
     }
 </style>

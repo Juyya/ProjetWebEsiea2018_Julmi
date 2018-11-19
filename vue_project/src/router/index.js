@@ -10,6 +10,7 @@ import APropos from '@/components/APropos'
 import Contact from '@/components/Contact'
 import Panier from '@/components/Panier'
 import Authentification from '@/components/Authentification'
+import Checkout from '@/components/Checkout'
 
 export const routers = [
   {
@@ -71,5 +72,10 @@ export const routers = [
     path: '/Authentification',
     name: 'Authentification',
     component: Authentification
+  },
+  {
+    path: '/Checkout',
+    name: 'Checkout',
+    component: Checkout
   }
 ]

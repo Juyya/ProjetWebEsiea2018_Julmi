@@ -1,20 +1,20 @@
 <template>
     <div id="app">
+      <h1>{{title}}</h1>
                <div class="row">
       <div class="prod" v-for="(data,index) in products" :key="index">
-        <div class="food">
+       <!-- <div class="food"> -->
         <img class="imagealacarte" :src="data.image">
          <h5>{{data.productTitle}}</h5>
          <div class="description"><h6>{{data.productDescription}}</h6></div>
          <div class="price"><h6>{{data.productPrice}}</h6></div>
-        <div class="addtocart">
-            <button class="btnadd" v-on:click="add +=1">Add to cart</button>
+        <div id="addtocart" v-on:click="addtocart">
+            <button>add to cart</button>
         </div>
       </div>
-    </div>
+    <!--</div>-->
             </div>
     </div>
-
 </template>
 
 <script>
@@ -22,111 +22,49 @@ export default {
   name: 'MenuBrochettes',
   data () {
     return {
-      title: 'MenuBrochettes',
+      title: 'Menu Brochettes',
       products: [
         {
-          productTitle: 'ABCN',
+          productTitle: 'Y1 Aomori',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+          '1 soupe, 1 salade, 1 riz, 2 poulet, 2 boulettes de poulet',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/yakitori.png'),
           productId: 1
         },
         {
-          productTitle: 'KARMA',
+          productTitle: 'Y2 Fukui',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+            '1 soupe, 1 salade, 1 riz, 1 boulettes de poulet, 1 poulet, 1 aile de poulet, 1 boeuf, 1 boeuf au fromage',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/yakitori.png'),
           productId: 2
         },
         {
-          productTitle: 'Tino',
+          productTitle: 'Y3 Gifu',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+            '1 soupe, 1 salade, 1 riz, 5 boeuf au fromage',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/yakitori.png'),
           productId: 3
         },
         {
-          productTitle: 'EFG',
+          productTitle: 'Y4 Hyogo',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+            '1 soupe, 1 salade, 1 riz, 2 saumon, 2 thon ou 4 brochettes de saumon ',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/yakitori.png'),
           productId: 4
-        },
-        {
-          productTitle: 'MLI',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 5
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 6
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 7
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 8
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 9
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 10
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 11
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 12
         }
       ]
     }
   },
 
   methods: {
-    navigate () {
-      // router.push({ name: 'Accueil' })
+    addtocart (products) {
+       console.log("bn,;:lkj,nbvhbjkmojkbhvk")
+      console.log(JSON.stringify(products))
+      this.$store.commit('addItemPanier',products)
     }
   }
 }
@@ -156,7 +94,12 @@ export default {
 
 h6,
 h5 {
-  color: aqua;
+  color:white;
 
+}
+
+h1{
+  color :white;
+  text-align: center;
 }
 </style>

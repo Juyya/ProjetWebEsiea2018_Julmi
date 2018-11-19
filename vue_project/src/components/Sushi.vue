@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+          <h1>{{title}}</h1>
                <div class="row">
       <div class="prod" v-for="(data,index) in products" :key="index">
        <!-- <div class="food"> -->
@@ -14,7 +15,6 @@
     <!--</div>-->
             </div>
     </div>
-
 </template>
 
 <script>
@@ -26,101 +26,45 @@ export default {
       title: 'Sushi',
       products: [
         {
-          productTitle: 'ABCN',
+          productTitle: 'Maguro',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+            'Thon',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/sushi.png'),
           productId: 1,
           nbOfProducts: 0
         },
         {
-          productTitle: 'KARMA',
+          productTitle: 'Shake',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+            'Saumon',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/sushi.png'),
           productId: 2
         },
         {
-          productTitle: 'Tino',
+          productTitle: 'Tai',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+            'Daurade',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/sushi.png'),
           productId: 3
         },
         {
-          productTitle: 'EFG',
+          productTitle: 'Unagi',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+            'Anguille',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/sushi.png'),
           productId: 4
         },
         {
-          productTitle: 'MLI',
+          productTitle: 'Saba',
           productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
+            'Maquereau',
           productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          image: require('../assets/sushi.png'),
           productId: 5
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 6
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 7
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 8
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 9
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 10
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 11
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 12
         }
       ]
     }
@@ -139,7 +83,6 @@ export default {
 <style scoped>
     .description{
         text-align: center;
-        /*background-color: red;*/
     }
 
     .row{
@@ -160,7 +103,13 @@ export default {
 
 h6,
 h5 {
-  color: aqua;
-
+  color:white;
+  text-align: center;
 }
+
+h1{
+  color :white;
+  text-align: center;
+}
+
 </style>

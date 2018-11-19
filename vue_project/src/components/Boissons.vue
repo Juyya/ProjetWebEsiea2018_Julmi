@@ -1,20 +1,20 @@
 <template>
     <div id="app">
+      <h1>{{title}}</h1>
                <div class="row">
       <div class="prod" v-for="(data,index) in products" :key="index">
-        <div class="food">
+       <!-- <div class="food"> -->
         <img class="imagealacarte" :src="data.image">
          <h5>{{data.productTitle}}</h5>
          <div class="description"><h6>{{data.productDescription}}</h6></div>
          <div class="price"><h6>{{data.productPrice}}</h6></div>
-        <div class="addtocart">
-            <button class="btnadd" v-on:click="add +=1">Add to cart</button>
+        <div id="addtocart" v-on:click="addtocart">
+            <button>add to cart</button>
         </div>
       </div>
-    </div>
+    <!--</div>-->
             </div>
     </div>
-
 </template>
 
 <script>
@@ -25,107 +25,27 @@ export default {
       title: 'Boissons',
       products: [
         {
-          productTitle: 'ABCN',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 1
-        },
-        {
-          productTitle: 'KARMA',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 2
-        },
-        {
-          productTitle: 'Tino',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          productTitle:
+            'Orangina',
+          productPrice: '2,80€',
+          image: require('../assets/orangina.png'),
           productId: 3
         },
         {
-          productTitle: 'EFG',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
+          productTitle: 'Ice tea',
+          productPrice: '2,80€',
+          image: require('../assets/icetea.png'),
           productId: 4
         },
-        {
-          productTitle: 'MLI',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 5
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 6
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 7
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 8
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 9
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 10
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 11
-        },
-        {
-          productTitle: 'Banans',
-          productDescription:
-            'Tempura crevette, avocat, oignons frits (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/cart.png'),
-          productId: 12
-        }
       ]
     }
   },
 
-  methods: {
-    navigate () {
+   methods: {
+    addtocart (products) {
+       console.log("bn,;:lkj,nbvhbjkmojkbhvk")
+      console.log(JSON.stringify(products))
+      this.$store.commit('addItemPanier',products)
     }
   }
 }
@@ -134,7 +54,6 @@ export default {
 <style scoped>
     .description{
         text-align: center;
-        /*background-color: red;*/
     }
 
     .row{
@@ -143,7 +62,7 @@ export default {
 }
 
 .description{
-  text-align: left;
+  text-align: center;
 }
 
 .prod{
@@ -155,7 +74,12 @@ export default {
 
 h6,
 h5 {
-  color: aqua;
-
+  color:white;
 }
+
+h1{
+  color:white;
+  text-align: center;
+}
+
 </style>
