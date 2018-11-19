@@ -18,34 +18,29 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Boissons',
   data () {
     return {
       title: 'Boissons',
-      products: [
-        {
-          productTitle:
-            'Orangina',
-          productPrice: '2,80€',
-          image: require('../assets/orangina.png'),
-          productId: 3
-        },
-        {
-          productTitle: 'Ice tea',
-          productPrice: '2,80€',
-          image: require('../assets/icetea.png'),
-          productId: 4
-        },
-      ]
+      products: []
     }
   },
 
-   methods: {
-    addtocart (products) {
-       console.log("bn,;:lkj,nbvhbjkmojkbhvk")
-      console.log(JSON.stringify(products))
-      this.$store.commit('addItemPanier',products)
+  created () {
+    axios.get('/api/list/boissons')
+      .then((resp) => {
+        this.products = resp.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  },
+
+  methods: {
+    navigate () {
     }
   }
 }

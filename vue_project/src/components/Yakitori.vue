@@ -18,38 +18,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Yakitori',
   data () {
     return {
       title: 'Yakitori',
-      products: [
-        {
-          productTitle: 'Tsukune',
-          productDescription:
-            'Boulettes de poulet',
-          productPrice: '12,80€',
-          image: require('../assets/yakitori.png'),
-          productId: 1
-        },
-        {
-          productTitle: 'Negima',
-          productDescription:
-            'Cuisse de poulet',
-          productPrice: '12,80€',
-          image: require('../assets/yakitori.png'),
-          productId: 2
-        },
-        {
-          productTitle: 'Cheese yaki',
-          productDescription:
-            'Boeuf fromage',
-          productPrice: '12,80€',
-          image: require('../assets/yakitori.png'),
-          productId: 3
-        }
-      ]
+      products: []
     }
+  },
+
+  created () {
+    axios.get('/api/list/yakitori')
+      .then((resp) => {
+        this.products = resp.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
 
   methods: {

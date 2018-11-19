@@ -18,63 +18,31 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   name: 'Sushi',
   data () {
     return {
       title: 'Sushi',
-      products: [
-        {
-          productTitle: 'Maguro',
-          productDescription:
-            'Thon',
-          productPrice: '12,80€',
-          image: require('../assets/sushi.png'),
-          productId: 1,
-          nbOfProducts: 0
-        },
-        {
-          productTitle: 'Shake',
-          productDescription:
-            'Saumon',
-          productPrice: '12,80€',
-          image: require('../assets/sushi.png'),
-          productId: 2
-        },
-        {
-          productTitle: 'Tai',
-          productDescription:
-            'Daurade',
-          productPrice: '12,80€',
-          image: require('../assets/sushi.png'),
-          productId: 3
-        },
-        {
-          productTitle: 'Unagi',
-          productDescription:
-            'Anguille',
-          productPrice: '12,80€',
-          image: require('../assets/sushi.png'),
-          productId: 4
-        },
-        {
-          productTitle: 'Saba',
-          productDescription:
-            'Maquereau',
-          productPrice: '12,80€',
-          image: require('../assets/sushi.png'),
-          productId: 5
-        }
-      ]
+      products: []
     }
+  },
+
+  created () {
+    axios.get('/api/list/sushi')
+      .then((resp) => {
+        this.products = resp.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
 
   methods: {
     addtocart (products) {
-       console.log("bn,;:lkj,nbvhbjkmojkbhvk")
       console.log(JSON.stringify(products))
-      this.$store.commit('addItemPanier',products)
+      this.$store.commit('addItemPanier', products)
     }
   }
 }

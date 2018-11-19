@@ -18,54 +18,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Maki',
   data () {
     return {
       title: 'Maki',
-      products: [
-        {
-          productTitle: 'Tuna Roll',
-          productDescription:
-            'Thon, avocat, cheese (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/maki.png'),
-          productId: 1
-        },
-        {
-          productTitle: 'Shrimp Roll',
-          productDescription:
-            'Crevette, avocat, surimi (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/maki.png'),
-          productId: 2
-        },
-        {
-          productTitle: 'Las Vegas Roll',
-          productDescription:
-            'Saumon mi-cuit, avocat, saumon (8 pièces)',
-          productPrice: '12,80€',
-          image: require('../assets/maki.png'),
-          productId: 3
-        },
-        {
-          productTitle: 'Dragon Roll',
-          productDescription:
-            'Tempura crevette, avocat, concombre (8 pièces) ',
-          productPrice: '12,80€',
-          image: require('../assets/maki.png'),
-          productId: 4
-        },
-        {
-          productTitle: 'Volcano Roll' ,
-          productDescription:
-            'Tempura crevette, avocat, bonite séchée (8 pièces) ',
-          productPrice: '12,80€',
-          image: require('../assets/maki.png'),
-          productId: 5
-        }
-      ]
+      products: []
     }
+  },
+
+  created () {
+    axios.get('/api/list/maki')
+      .then((resp) => {
+        this.products = resp.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
 
   methods: {

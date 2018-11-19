@@ -18,26 +18,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Desserts',
   data () {
     return {
       title: 'Desserts',
-      products: [
-        {
-          productTitle: 'Litchi',
-          productPrice: '1,80€',
-          image: require('../assets/litchi.png'),
-          productId: 1
-        },
-        {
-          productTitle: 'Tiramisu',
-          productPrice: '3,80€',
-          image: require('../assets/tiramisu.png'),
-          productId: 2
-        }
-      ]
+      products: []
     }
+  },
+
+  created () {
+    axios.get('/api/list/desserts')
+      .then((resp) => {
+        this.products = resp.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
 
   methods: {

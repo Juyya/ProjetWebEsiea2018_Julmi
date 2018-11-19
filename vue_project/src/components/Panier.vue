@@ -16,7 +16,7 @@
 <script>
 
 export default {
-  name: 'Panier',
+  name: 'Panier'
 }
 </script>
 

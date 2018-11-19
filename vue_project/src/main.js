@@ -6,7 +6,6 @@ import Navigation from './components/Navigation'
 import Panier from './components/Panier'
 import store from './store'
 
-
 Vue.use(VueRouter)
 
 const router = new VueRouter({

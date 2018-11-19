@@ -18,38 +18,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Menu Maki',
   data () {
     return {
       title: 'Menu Maki',
-      products: [
-        {
-          productTitle: 'M1 Sukumo',
-          productDescription:
-            '1 soupe, 1 salade, 6 maki saumon, 6 maki thon',
-          productPrice: '12,80€',
-          image: require('../assets/maki.png'),
-          productId: 1
-        },
-        {
-          productTitle: 'M2 Onomichi',
-          productDescription:
-            '1 soupe, 1 salade, 6 maki avocat',
-          productPrice: '12,80€',
-          image: require('../assets/maki.png'),
-          productId: 2
-        },
-        {
-          productTitle: 'M3 Yonago',
-          productDescription:
-            '1 soupe, 1 salade, 6 Florida maki, 6 California saumon avocat',
-          productPrice: '12,80€',
-          image: require('../assets/maki.png'),
-          productId: 3
-        }
-      ]
+      products: []
     }
+  },
+
+  created () {
+    axios.get('/api/list/menumaki')
+      .then((resp) => {
+        this.products = resp.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
 
   methods: {

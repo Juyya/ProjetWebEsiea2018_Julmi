@@ -18,46 +18,25 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'MenuBrochettes',
   data () {
     return {
-      title: 'Menu Brochettes',
-      products: [
-        {
-          productTitle: 'Y1 Aomori',
-          productDescription:
-          '1 soupe, 1 salade, 1 riz, 2 poulet, 2 boulettes de poulet',
-          productPrice: '12,80€',
-          image: require('../assets/yakitori.png'),
-          productId: 1
-        },
-        {
-          productTitle: 'Y2 Fukui',
-          productDescription:
-            '1 soupe, 1 salade, 1 riz, 1 boulettes de poulet, 1 poulet, 1 aile de poulet, 1 boeuf, 1 boeuf au fromage',
-          productPrice: '12,80€',
-          image: require('../assets/yakitori.png'),
-          productId: 2
-        },
-        {
-          productTitle: 'Y3 Gifu',
-          productDescription:
-            '1 soupe, 1 salade, 1 riz, 5 boeuf au fromage',
-          productPrice: '12,80€',
-          image: require('../assets/yakitori.png'),
-          productId: 3
-        },
-        {
-          productTitle: 'Y4 Hyogo',
-          productDescription:
-            '1 soupe, 1 salade, 1 riz, 2 saumon, 2 thon ou 4 brochettes de saumon ',
-          productPrice: '12,80€',
-          image: require('../assets/yakitori.png'),
-          productId: 4
-        }
-      ]
+      title: 'MenuBrochettes',
+      products: []
     }
+  },
+
+  created () {
+    axios.get('/api/list/menubrochettes')
+      .then((resp) => {
+        this.products = resp.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   },
 
   methods: {
