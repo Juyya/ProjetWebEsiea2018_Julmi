@@ -1,6 +1,6 @@
-# julmi
+# JULMI Project
 
-> esiez
+> esiea 2018
 
 ## Build Setup
 
