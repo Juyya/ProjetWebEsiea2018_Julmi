@@ -1,21 +1,22 @@
 <template>
     <header>
-    <div class="img-cart">
+    <!-- <div class="img-cart">
         <img src="/static/cart.png">
-    </div>
+    </div> -->
     <div class="cart">
          <h4>Panier</h4>
-            <div class="info">
-            <a>0 article(s) - 0,00€</a>
-            <div class="empty">Votre panier est vide !</div>
+            <div id="pro">
+                <router-link v-bind:to="'/Checkout'">{{ $store.getters.nbItemPanier }} article(s) - {{ $store.getters.price }}</router-link>
+           <!-- <div class="empty">Votre panier est vide !</div> -->
             </div>
     </div>
     </header>
 </template>
 
 <script>
+
 export default {
-  name: 'Panier'
+  name: 'Panier',
 }
 </script>
 
@@ -29,7 +30,6 @@ export default {
 
     .cart {
         color: white;
-        margin-top:px;
         padding-left: 1200px;
         flex-wrap: wrap;
         position: absolute;
@@ -39,5 +39,4 @@ export default {
         margin-top : -10px;
         font-size: 14px;
     }
-
 </style>

@@ -9,12 +9,10 @@
 
 <script>
 import Navigation from './Navigation'
-
 export default {
   name: 'Accueil',
   components: {
     Navigation
-
   },
   data () {
     return {
@@ -22,8 +20,8 @@ export default {
         // the object must have `src` property
         // `title` : img 's title
         // `src` : img 's src
-        { title: 'defalut', src: 'https://frama.link/slide1' },
-        { title: 'defalut2', src: 'https://frama.link/slide2' }
+        // { title: 'defalut', src: 'https://frama.link/slide1' },
+        // { title: 'defalut2', src: 'https://frama.link/slide2' }
         // ...
       ]
     }

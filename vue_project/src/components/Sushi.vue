@@ -2,22 +2,23 @@
     <div id="app">
                <div class="row">
       <div class="prod" v-for="(data,index) in products" :key="index">
-        <div class="food">
+       <!-- <div class="food"> -->
         <img class="imagealacarte" :src="data.image">
          <h5>{{data.productTitle}}</h5>
          <div class="description"><h6>{{data.productDescription}}</h6></div>
          <div class="price"><h6>{{data.productPrice}}</h6></div>
-        <div id="addtocart">
-            <button class="btnadd" v-on:click="add +=1">Add to cart</button>
+        <div id="addtocart" v-on:click="addtocart">
+            <button>add to cart</button>
         </div>
       </div>
-    </div>
+    <!--</div>-->
             </div>
     </div>
 
 </template>
 
 <script>
+
 export default {
   name: 'Sushi',
   data () {
@@ -30,7 +31,8 @@ export default {
             'Tempura crevette, avocat, oignons frits (8 pièces)',
           productPrice: '12,80€',
           image: require('../assets/cart.png'),
-          productId: 1
+          productId: 1,
+          nbOfProducts: 0
         },
         {
           productTitle: 'KARMA',
@@ -122,18 +124,17 @@ export default {
         }
       ]
     }
-  }
+  },
 
-  /* methods: {
-    navigate () {
-      router.push({ name: 'Accueil' })
+  methods: {
+    addtocart (products) {
+       console.log("bn,;:lkj,nbvhbjkmojkbhvk")
+      console.log(JSON.stringify(products))
+      this.$store.commit('addItemPanier',products)
     }
-  } */
+  }
 }
 </script>
-
-
-
 
 <style scoped>
     .description{

@@ -31,7 +31,7 @@
                     </ul>
                 </li>
 
-                    <li><router-link v-bind:to="'/About'">A Propos</router-link></li>
+                    <li><router-link v-bind:to="'/APropos'">A Propos</router-link></li>
 
                     <li><router-link v-bind:to="'/Contact'">Contact</router-link></li>
 
